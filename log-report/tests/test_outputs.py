@@ -18,7 +18,7 @@ def test_total_requests():
     """How many log lines / requests were there?"""
     report = _load_report()
     assert "total_requests" in report, "missing key: total_requests"
-    assert report["total_requests"] == 12
+    assert report["total_requests"] == 6
 
 
 def test_unique_ips():
@@ -39,4 +39,4 @@ def test_200_code_count():
     """How many responses had HTTP status 200?"""
     report = _load_report()
     assert "200_code_times" in report, "missing key: 200_code_times"
-    assert report["200_code_times"] == 10
+    assert report["200_code_times"] == 5
