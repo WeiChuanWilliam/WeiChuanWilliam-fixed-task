@@ -1,0 +1,7 @@
+***Note***
+artifacts is a TOML array (e.g. ["/app/report.json"]), not a string, sits at the top level (above the first [section]), and lists the exact file the task produces
+a [task] section sets name = "dynamo/log-report" (the dynamo/ org prefix + kebab slug) and a one-line description
+[metadata] carries every template field: category, subcategory, task_objective (array), artifact_type (array), expert_time_estimate_hours, model_tested, agent_tested, difficulty_explanation, solution_explanation, verification_explanation (the template has no avg_at_8, tags, or schema_version)
+category/subcategory/task_objective/artifact_type are lowercase snake_case values drawn from .dynamo/diversity-taxonomy.toml
+[agent] and [verifier] each set timeout_sec
+[environment] sets build_timeout_sec, cpus, memory_mb, storage_mb, gpus, allow_internet, and mcp_servers

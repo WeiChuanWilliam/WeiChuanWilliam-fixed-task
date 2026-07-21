@@ -1,0 +1,36 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.2, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 4 items
+
+../tests/test_outputs.py F..F                                            [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_total_requests ______________________________
+
+    def test_total_requests():
+        """How many log lines / requests were there?"""
+        report = _load_report()
+        assert "total_requests" in report, "missing key: total_requests"
+>       assert report["total_requests"] == 12
+E       assert 6 == 12
+
+/tests/test_outputs.py:21: AssertionError
+_____________________________ test_200_code_count ______________________________
+
+    def test_200_code_count():
+        """How many responses had HTTP status 200?"""
+        report = _load_report()
+        assert "200_code_times" in report, "missing key: 200_code_times"
+>       assert report["200_code_times"] == 10
+E       assert 5 == 10
+
+/tests/test_outputs.py:42: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../tests/test_outputs.py::test_unique_ips
+PASSED ../tests/test_outputs.py::test_top_path
+FAILED ../tests/test_outputs.py::test_total_requests - assert 6 == 12
+FAILED ../tests/test_outputs.py::test_200_code_count - assert 5 == 10
+========================= 2 failed, 2 passed in 0.07s ==========================

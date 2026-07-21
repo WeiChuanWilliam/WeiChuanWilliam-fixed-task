@@ -1,0 +1,32 @@
+artifacts = ["/app/report.json"]
+
+[task]
+name = "dynamo/log-report"
+description = "..."
+
+[metadata]
+category = "..."             # snake_case, from .dynamo/diversity-taxonomy.toml
+subcategory = "..."          # snake_case, from taxonomy
+task_objective = ["..."]     # snake_case, from taxonomy
+artifact_type = ["..."]      # snake_case, from taxonomy
+expert_time_estimate_hours = 0.3
+model_tested = "GPT-5.4"
+agent_tested = "Terminus-2"
+difficulty_explanation = "..."
+solution_explanation = "..."
+verification_explanation = "..."
+
+[verifier]
+timeout_sec = 120.0
+
+[agent]
+timeout_sec = 120.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
